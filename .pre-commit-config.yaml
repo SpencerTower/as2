@@ -1,0 +1,31 @@
+repos:
+  # Hooks specific to `hfweb`.
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-yaml
+      - id: check-json
+      - id: check-added-large-files
+      - id: mixed-line-ending
+      - id: detect-private-key
+      - id: check-merge-conflict
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        entry: ./pnpm-run.sh
+        language: script
+        pass_filenames: false
+        args: [format]
+      - id: tsc
+        name: typescript
+        entry: ./pnpm-run.sh
+        language: script
+        pass_filenames: false
+        args: [tscheck]
+      - id: eslint
+        name: eslint
+        entry: ./pnpm-run.sh
+        language: script
+        pass_filenames: false
+        args: [lint]

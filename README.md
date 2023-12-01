@@ -20,6 +20,28 @@ You can see my own writing and usage at
 
 ## Build
 
+### Pre-Commit
+
+The project uses [pre-commit](https://pre-commit.com/) to ensure linting, formatting, and others pass before committing.
+
+[Install pre-commit on your machine](https://pre-commit.com/#installation) then initialize it once for this repository:
+
+```shell
+pnpm pre-commit-install
+```
+
+Now upon every commit the `pre-commit` rules are checked. You can trigger them manually by running:
+
+```shell
+pnpm pre-commit-run
+```
+
+If it's necessary, you can skip the pre-commit hooks via:
+
+```shell
+git commit --no-verify -m "..."
+```
+
 ### Google Maps JavaScript API
 
 API keys are provided for the [atlasphere.app](https://atlasphere.app) and 

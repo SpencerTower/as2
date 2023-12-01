@@ -1,12 +1,11 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import { GoogleTagManager } from '@next/third-parties/google';
 import '../styles/globals.css';
 import { siteConfig } from '@/config/site';
 
 const GA_MEASUREMENT_ID = 'G-CS5XEFS7KQ';
-
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
         width: 300,
         height: 300,
         alt: siteConfig.name,
-      }
+      },
     ],
   },
   twitter: {
@@ -47,20 +46,20 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: '/images/icons/atlasphere-tab-icon.png',
-  }
-}
+  },
+};
 
 interface RootLayoutProps {
-  children: React.ReactNode,
+  children: React.ReactNode;
 }
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <head />
       <body className={inter.className}>{children}</body>
       <GoogleTagManager gtmId={GA_MEASUREMENT_ID} />
