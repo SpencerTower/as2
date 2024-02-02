@@ -4,9 +4,7 @@ Progressive web application and platform for location-based publishing:
 
 Atlasphere is a viewing and authoring platform for writing per-location
 articles associated with a geoposition. It uses Google Maps (or Mapbox) for displaying
-the locations associated with writing posts, and leverages the
-[Elix](https://component.kitchen/elix) web components library for its user 
-interface and overall architecture.
+the locations associated with writing posts.
 
 Atlasphere is implemented as a web application, with a PWA front-end and an
 API+database+AWS back-end.
@@ -15,10 +13,95 @@ A series of [demonstrations](https://atlasphere.app/demo) illustrate the
 potential uses for Atlasphere. Note that on wide screens, the demonstrations 
 are live instances of the web app running within the context of the web page.
 
-You can see my own writing and usage at 
+You can see `robbear`'s writing and usage at 
 [https://atlasphere.app?tag=@robbearman](https://atlasphere.app?tag=@robbearman).
 
-## Build
+## Getting Started
+
+Throughout  this section, it is assumed that your shell is rooted in this directory,
+via `cd as2`. It is also assumed you are comfortable working in the command-line
+terminal application.
+
+### Installing
+
+The `as2` project is built on a JavaScript framework which requires the `Node.js` environment. To install `Node.js`, you can make use of the Node Version Manager,
+`nvm`. See the `Installing and Updating` section of https://github.com/nvm-sh/nvm.
+Running one of the `curl` or `wget` lines should suffice.
+
+After you install `nvm`, install the `20.9.0` version of Node.js:
+
+```
+$ nvm install 20.9.0
+$ nvm alias default 20.9.0
+```
+
+You can verify that your current Node.js environment is `20.9.0` by running:
+
+```
+nvm current
+```
+
+If you have previously installed other versions of Node.js that you no longer need, you can remove them following this example:
+
+```
+nvm uninstall 14.19.0
+```
+
+The `as2` project uses `pnpm` for its JavaScript package management. You can install `pnpm` by running:
+
+```
+npm install -g pnpm@8.10.5
+```
+
+You should now see version `8.10.5` when you run:
+
+```
+pnpm --version
+```
+
+Next, install the `as2` project dependencies:
+
+```
+pnpm install
+```
+
+Then perform a clean project build by running:
+
+```
+pnpm scrub-build
+```
+
+The `pnpm scrub-build` command cleans any previous build of the project, removes all project dependencies, reinstalls all project dependencies, and then builds the project. You can consider `pnpm scrub-build` as a way to re-establish a fresh project state for your branch when in doubt.
+
+### Development
+
+When developing, you can run a local web server and view your page or blog post edits by building and starting the web application. There are a few ways to do this, with the more advanced ways being fastest but depending on your understanding of the state of your local system.
+
+This will always work, but is slowest because it refreshes the JavaScript dependencies and performs a clean build:
+
+```shell
+pnpm scrub-build
+pnpm start
+```
+
+The `pnpm start` command starts a local web server, and you can view the web site by viewing `http://localhost:3000` in your web browser. You can stop the web server by hitting `ctrl-c` in the terminal where you ran `pnpm start`.
+
+If you have only made changes to your branch work, you can avoid reinstalling dependencies and take advantage of your current build state by running:
+
+```shell
+pnpm build
+pnpm start
+```
+
+Again, you can stop the web server with `ctrl-c`.
+
+Finally, you can run the web server in a mode that supports hot change reloading: if any of the source files changes, the rendered pages change, too.
+
+```shell
+pnpm dev
+```
+
+This is typically the most efficient way to work, and is best run after first performing a full build via `pnpm build`. If in doubt, you can manually refresh the web page as well. To stop the web server in this case requires hitting `ctrl-c` twice.
 
 ### Pre-Commit
 
@@ -41,6 +124,10 @@ If it's necessary, you can skip the pre-commit hooks via:
 ```shell
 git commit --no-verify -m "..."
 ```
+
+## Out of date below...
+
+Everything below needs to be updated for the `as2` repo.
 
 ### Google Maps JavaScript API
 

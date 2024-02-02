@@ -1,0 +1,9 @@
+{
+  "name": "remark-collect-links",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "microbundle -i ./index.js -o ./dist/index.js --target node --format cjs",
+    "clean": "rm -rf dist"
+  }
+}

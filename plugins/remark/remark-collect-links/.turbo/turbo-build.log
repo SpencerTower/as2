@@ -1,0 +1,7 @@
+
+> remark-collect-links@ build /Users/robbear/dev/robbear/hfweb/plugins/remark/remark-collect-links
+> microbundle -i ./index.js -o ./dist/index.js --target node --format cjs
+
+Build "remark-collect-links" to dist:
+      3.35 kB: index.cjs.gz
+      2.89 kB: index.cjs.br

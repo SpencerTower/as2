@@ -1,0 +1,8 @@
+{
+  "name": "raidocs-templatize",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "microbundle -i ./index.js -o ./dist/index.js --target node --format cjs",
+    "clean": "rm -rf dist"
+  }
+}

@@ -1,0 +1,7 @@
+
+> raidocs-preprocess@ build /Users/robbear/dev/robbear/hfweb/plugins/remark/raidocs-preprocess
+> microbundle -i ./index.js -o ./dist/index.js --target node --format cjs
+
+Build "raidocs-preprocess" to dist:
+        259 B: index.js.gz
+        213 B: index.js.br

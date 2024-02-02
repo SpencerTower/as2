@@ -4,28 +4,33 @@ repos:
     rev: v4.5.0
     hooks:
       - id: check-yaml
+        files: "^site/"
       - id: check-json
+        files: "^site/"
       - id: check-added-large-files
+        files: "^site/"
       - id: mixed-line-ending
+        files: "^site/"
       - id: detect-private-key
+        files: "^site/"
       - id: check-merge-conflict
   - repo: local
     hooks:
       - id: prettier
         name: prettier
-        entry: ./pnpm-run.sh
+        entry: ./scripts/pnpm-run.sh
         language: script
         pass_filenames: false
         args: [format]
       - id: tsc
         name: typescript
-        entry: ./pnpm-run.sh
+        entry: ./scripts/pnpm-run.sh
         language: script
         pass_filenames: false
         args: [tscheck]
       - id: eslint
         name: eslint
-        entry: ./pnpm-run.sh
+        entry: ./scripts/pnpm-run.sh
         language: script
         pass_filenames: false
         args: [lint]

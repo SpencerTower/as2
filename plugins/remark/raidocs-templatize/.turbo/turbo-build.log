@@ -1,0 +1,7 @@
+
+> raidocs-templatize@ build /Users/robbear/dev/robbear/hfweb/plugins/remark/raidocs-templatize
+> microbundle -i ./index.js -o ./dist/index.js --target node --format cjs
+
+Build "raidocs-templatize" to dist:
+        280 B: index.js.gz
+        223 B: index.js.br
