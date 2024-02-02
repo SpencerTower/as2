@@ -125,6 +125,21 @@ If it's necessary, you can skip the pre-commit hooks via:
 git commit --no-verify -m "..."
 ```
 
+### Set Up Vercel
+
+To deploy, view, and share your private branch work under Vercel, you first need to make sure you have a Vercel account. Create a hobby account by going to https://vercel.com.
+
+Next, after forking the `HyperfineSoftware/as2` project to your private GitHub account, add your forked version to Vercel as a new project. Make sure `site` is set as the Root Directory. Then set the Project Name to `as2-yourgithubname`.
+
+Finally, add the following environment variables to your new Vercel project:
+
+```
+VERCEL_FORCE_NO_BUILD_CACHE   1
+ENABLE_EXPERIMENTAL_COREPACK  1
+```
+
+You may need to wait to do this until after the intial project setup deployment. Go to the project settings and choose Environment Variables on the left.
+
 ## Out of date below...
 
 Everything below needs to be updated for the `as2` repo.
