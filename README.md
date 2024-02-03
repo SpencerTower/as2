@@ -9,7 +9,7 @@ the locations associated with writing posts.
 Atlasphere is implemented as a web application, with a PWA front-end and an
 API+database+AWS back-end.
 
-A series of [demonstrations](https://atlasphere.app/demo) illustrate the 
+A series of [demonstrations](https://atlasphere.app/demo) illustrate the
 potential uses for Atlasphere. Note that on wide screens, the demonstrations 
 are live instances of the web app running within the context of the web page.
 
